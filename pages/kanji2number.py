@@ -7,7 +7,7 @@ INT1 = {kanji: i for i, kanji in enumerate(KANJI1)}
 INT2 = {kanji: 10**i for i, kanji in enumerate(KANJI2, 1)}
 INT3 = {kanji: 10000**i for i, kanji in enumerate(KANJI3, 1)}
 
-def kanji_to_int(kanji):
+def kanji2number(kanji):
     i1 = i2 = i3 = 0
     for k in kanji:
         if k in KANJI1:
@@ -34,7 +34,7 @@ with st.form(key='enter_form'):
     #変換ボタン
     exchange_btn = st.form_submit_button('変換')
 
-    after_kanji = kanji_to_int(before_kanji)
+    after_kanji = kanji2number(before_kanji)
     
 
     if exchange_btn:
